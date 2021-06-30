@@ -18,29 +18,50 @@ public class SimpleEnemy : EnemyBase
         //Code to test the damage coroutine
         if (Input.GetKeyDown(KeyCode.Space) && _attackCoroutine == null)
         {
-            
-            _attackCoroutine = StartCoroutine(Attack());
+            _attackCoroutine = StartCoroutine(PoisonDamage());
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Attack();
         }
     }
 
-    IEnumerator Attack()
+    IEnumerator PoisonDamage()
     {
-        Debug.Log("Attack coroutine started");
+        Debug.Log("Poison status effect started");
+
+        int appliedTimes = 0;
+        while (appliedTimes <= 10)
+        {
+            if(GetCurrentLife() > 0)
+            {
+                ApplyStatusDamage(10);
+                yield return new WaitForSeconds(1);
+                appliedTimes++;
+                Debug.Log($"Life after poison damage: {GetCurrentLife()}");
+            }
+            else
+            {
+                Debug.Log("Enemy died poisoned");
+                break;
+            }
+        }
+
+        Debug.Log("Poison status effect finished");
+    }
+
+    void Attack()
+    {
+        Debug.Log("Enemy attacked started");
+
+        OnDamage(1);
         float life = GetCurrentLife();
 
-        for (int i = 0; i <= life; i++)
+        Debug.Log($"Current life: {life}");
+        if (life <= 0)
         {
-            OnDamage(1);
-            float newLife = GetCurrentLife();
-
-            Debug.Log($"Current life: {newLife}");
-            if (newLife <= 0)
-            {
-                Debug.Log("Enemy died");
-                yield break;
-            }
-
-            yield return new WaitForSeconds(1);
+            Debug.Log("Enemy died");
         }
     }
 }

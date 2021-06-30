@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -9,7 +8,6 @@ public class EnemyData : ScriptableObject
     public float statusResistance;
     public float movementSpeed;
     public string enemyName;
-
     public StatusEffect statusEffect;
     public float currentLife;
 

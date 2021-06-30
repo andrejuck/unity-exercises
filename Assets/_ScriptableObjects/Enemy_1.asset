@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db33b05d2f7b7144786d3ceda05939fa, type: 3}
   m_Name: Enemy_1
   m_EditorClassIdentifier: 
-  maxLife: 0
-  statusResistance: 0
-  movementSpeed: 0
-  enemyName: 
+  maxLife: 10
+  statusResistance: 0.3
+  movementSpeed: 2
+  enemyName: Planta carnivora
   statusEffect: 0
-  currentLife: 0
+  currentLife: -8

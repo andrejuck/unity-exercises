@@ -28,6 +28,7 @@ public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable, IMoveable
         if(enemyData.currentLife > 0)
         {
             float statusDamage = baseStatusDamage - (baseStatusDamage * enemyData.statusResistance);
+            Debug.Log(statusDamage.ToString());
             enemyData.currentLife -= statusDamage;
         }
     }

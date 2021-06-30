@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 359347319}
   - component: {fileID: 359347318}
   m_Layer: 0
-  m_Name: EnemyBasic
+  m_Name: SimpleEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,9 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443e14699a40cb843aefe04c9602bd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
-  statusResistance: 0.1
-  enemyName: Planta Carnivora
+  enemyData: {fileID: 11400000, guid: ae6b2941a041ea941ac6e31fd6b14c03, type: 2}
 --- !u!136 &359347319
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -618,4 +616,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bf8cad88a98d3469fa0079b2e1e2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  enemyData: {fileID: 11400000, guid: 3835da896ae2b134d962dc2486f6a04a, type: 2}
