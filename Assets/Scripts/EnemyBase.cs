@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable, IMoveable
+public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable
 {
 
     public EnemyData enemyData;
@@ -11,8 +11,6 @@ public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable, IMoveable
     }
 
     #region Overrideables
-   
-
     public virtual void OnDamage(float damage)
     {
         if(enemyData.currentLife > 0)
@@ -21,7 +19,7 @@ public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable, IMoveable
         }
     }
 
-    public void ApplyStatusDamage(float baseStatusDamage)
+    public virtual void ApplyStatusDamage(float baseStatusDamage)
     {
         if (enemyData.statusEffect.Equals(StatusEffect.None)) return;
 
@@ -42,31 +40,5 @@ public class EnemyBase : MonoBehaviour, IStatusEffect, IDamageable, IMoveable
 
     public StatusEffect GetStatus() => enemyData.statusEffect;
     public float GetCurrentLife() => enemyData.currentLife;
-    #endregion
-
-    #region Movement methods
-    public virtual void MoveRight()
-    {
-        Vector3 newPosition = new Vector3(transform.position.x + enemyData.movementSpeed, transform.position.y, transform.position.z);
-        transform.Translate(newPosition);
-    }
-
-    public virtual void MoveLeft()
-    {
-        Vector3 newPosition = new Vector3(transform.position.x - enemyData.movementSpeed, transform.position.y, transform.position.z);
-        transform.Translate(newPosition);
-    }
-
-    public virtual void MoveForward()
-    {
-        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + enemyData.movementSpeed);
-        transform.Translate(newPosition);
-    }
-
-    public virtual void MoveBackward()
-    {
-        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z - enemyData.movementSpeed);
-        transform.Translate(newPosition);
-    }
     #endregion
 }

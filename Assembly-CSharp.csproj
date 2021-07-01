@@ -56,14 +56,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enums\StatusEffect.cs" />
-    <Compile Include="Assets\Scripts\SimpleEnemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyBase.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IMoveable.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStatusEffect.cs" />
-    <Compile Include="Assets\Scripts\MovingEnemy.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IMoveable.cs" />
+    <Compile Include="Assets\Scripts\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjectsClasses\EnemyData.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPooller.cs" />
+    <Compile Include="Assets\Scripts\SimpleEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enums\StatusEffect.cs" />
+    <Compile Include="Assets\Scripts\WorldManagers\EnemyPoolManager.cs" />
+    <Compile Include="Assets\Scripts\WorldManagers\WorldManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjectsClasses\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Player\ShootPoollerManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Projectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -659,6 +666,12 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

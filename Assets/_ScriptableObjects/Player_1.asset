@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db33b05d2f7b7144786d3ceda05939fa, type: 3}
-  m_Name: Enemy_2
+  m_Script: {fileID: 11500000, guid: e93110a80fb50fb449d08c1a52018185, type: 3}
+  m_Name: Player_1
   m_EditorClassIdentifier: 
-  maxLife: 10
-  statusResistance: 0
+  maxLife: 50
+  currentLife: 50
   movementSpeed: 2
-  enemyName: 
-  statusEffect: 0
-  currentLife: 10
