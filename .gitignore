@@ -342,3 +342,4 @@ healthchecksdb
 Library/
 Temp/
 *.rar
+/Assets/Free UI build package/Documentation
